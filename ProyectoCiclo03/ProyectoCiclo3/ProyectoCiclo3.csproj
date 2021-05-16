@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="DAO\ClsDConsumidores.cs" />
     <Compile Include="DAO\ClsDMostrarConsumidores.cs" />
+    <Compile Include="DAO\ClsDPagos.cs" />
     <Compile Include="DOMINIO\ButtonColor.cs" />
     <Compile Include="MODELO\Comunidades.cs">
       <DependentUpon>Model1.tt</DependentUpon>

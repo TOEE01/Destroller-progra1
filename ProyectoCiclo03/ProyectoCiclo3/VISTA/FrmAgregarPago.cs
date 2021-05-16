@@ -83,7 +83,17 @@ namespace ProyectoCiclo3.VISTA
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            using (ACAPOLAMIEntities db =  new ACAPOLAMIEntities())
+            {
+                if (cbConsumidor.Text == "" && txtMonto.Text == "")
+                {
+                    MessageBox.Show("Los campos de Consumidor y el monto son obligatorios");
+                }
+                else
+                {
+
+                }
+            }
         }
 
         private string idConsumidor = "";

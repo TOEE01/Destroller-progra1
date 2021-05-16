@@ -25,7 +25,7 @@ go
 -------------------------------------------------------------------------------------------------
 
 -- Procedimiento para Mostrar Pagos filtrados por Consumidor
-ALTER PROC sp_MostrarPagosId
+create PROC sp_MostrarPagosId
 @idConsumidor int 
 
 AS
