@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d1e21848cc4f494c8439673f10f93a96" Name="Diagram1">
+        <EntityTypeShape EntityType="ACAPOLAMIModel.Comunidades" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ACAPOLAMIModel.Consumidores" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ACAPOLAMIModel.Estados" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ACAPOLAMIModel.Pagos" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ACAPOLAMIModel.Sucesos" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ACAPOLAMIModel.Usuarios" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="ACAPOLAMIModel.FK__Consumido__idCom__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="ACAPOLAMIModel.FK__Pagos__idConsumi__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="ACAPOLAMIModel.FK__Pagos__idEstado___3E52440B" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

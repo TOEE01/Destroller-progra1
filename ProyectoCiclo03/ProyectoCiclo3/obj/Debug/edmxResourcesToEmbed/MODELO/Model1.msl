@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ACAPOLAMIModelStoreContainer" CdmEntityContainer="ACAPOLAMIEntities">
+    <EntitySetMapping Name="Comunidades">
+      <EntityTypeMapping TypeName="ACAPOLAMIModel.Comunidades">
+        <MappingFragment StoreEntitySet="Comunidades">
+          <ScalarProperty Name="idComunidad" ColumnName="idComunidad" />
+          <ScalarProperty Name="nombreComunidad" ColumnName="nombreComunidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Consumidores">
+      <EntityTypeMapping TypeName="ACAPOLAMIModel.Consumidores">
+        <MappingFragment StoreEntitySet="Consumidores">
+          <ScalarProperty Name="idConsumidor" ColumnName="idConsumidor" />
+          <ScalarProperty Name="nombresConsumidor" ColumnName="nombresConsumidor" />
+          <ScalarProperty Name="apellidosConsumidor" ColumnName="apellidosConsumidor" />
+          <ScalarProperty Name="numeroDocumento" ColumnName="numeroDocumento" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="idComunidad_FK" ColumnName="idComunidad_FK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estados">
+      <EntityTypeMapping TypeName="ACAPOLAMIModel.Estados">
+        <MappingFragment StoreEntitySet="Estados">
+          <ScalarProperty Name="idEstado" ColumnName="idEstado" />
+          <ScalarProperty Name="nombreEstado" ColumnName="nombreEstado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pagos">
+      <EntityTypeMapping TypeName="ACAPOLAMIModel.Pagos">
+        <MappingFragment StoreEntitySet="Pagos">
+          <ScalarProperty Name="idPago" ColumnName="idPago" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="fechaPago" ColumnName="fechaPago" />
+          <ScalarProperty Name="impuesto" ColumnName="impuesto" />
+          <ScalarProperty Name="idEstado_FK" ColumnName="idEstado_FK" />
+          <ScalarProperty Name="idConsumidor_FK" ColumnName="idConsumidor_FK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sucesos">
+      <EntityTypeMapping TypeName="ACAPOLAMIModel.Sucesos">
+        <MappingFragment StoreEntitySet="Sucesos">
+          <ScalarProperty Name="idSuceso" ColumnName="idSuceso" />
+          <ScalarProperty Name="tipoSuceso" ColumnName="tipoSuceso" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="ACAPOLAMIModel.Usuarios">
+        <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="idComunidad" ColumnName="idComunidad" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="clave" ColumnName="clave" />
+          <ScalarProperty Name="rol" ColumnName="rol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_ActualizarConsumidor" FunctionName="ACAPOLAMIModel.Store.sp_ActualizarConsumidor" />
+    <FunctionImportMapping FunctionImportName="sp_EliminarConsumidor" FunctionName="ACAPOLAMIModel.Store.sp_EliminarConsumidor" />
+    <FunctionImportMapping FunctionImportName="sp_InsertarConsumidores" FunctionName="ACAPOLAMIModel.Store.sp_InsertarConsumidores" />
+    <FunctionImportMapping FunctionImportName="sp_MostrarClientesId" FunctionName="ACAPOLAMIModel.Store.sp_MostrarClientesId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ACAPOLAMIModel.sp_MostrarClientesId_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+          <ScalarProperty Name="DUI" ColumnName="DUI" />
+          <ScalarProperty Name="Correo_electrónico" ColumnName="Correo electrónico" />
+          <ScalarProperty Name="Teléfono" ColumnName="Teléfono" />
+          <ScalarProperty Name="Comunidad" ColumnName="Comunidad" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_MostrarConsumidores" FunctionName="ACAPOLAMIModel.Store.sp_MostrarConsumidores">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ACAPOLAMIModel.sp_MostrarConsumidores_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+          <ScalarProperty Name="DUI" ColumnName="DUI" />
+          <ScalarProperty Name="Correo_electrónico" ColumnName="Correo electrónico" />
+          <ScalarProperty Name="Teléfono" ColumnName="Teléfono" />
+          <ScalarProperty Name="Comunidad" ColumnName="Comunidad" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

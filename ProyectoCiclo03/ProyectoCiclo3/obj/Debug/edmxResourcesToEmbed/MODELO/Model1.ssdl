@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ACAPOLAMIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Comunidades">
+    <Key>
+      <PropertyRef Name="idComunidad" />
+    </Key>
+    <Property Name="idComunidad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombreComunidad" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Consumidores">
+    <Key>
+      <PropertyRef Name="idConsumidor" />
+    </Key>
+    <Property Name="idConsumidor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombresConsumidor" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="apellidosConsumidor" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="numeroDocumento" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="telefono" Type="varchar" MaxLength="20" />
+    <Property Name="correo" Type="varchar" MaxLength="50" />
+    <Property Name="idComunidad_FK" Type="int" />
+  </EntityType>
+  <EntityType Name="Estados">
+    <Key>
+      <PropertyRef Name="idEstado" />
+    </Key>
+    <Property Name="idEstado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombreEstado" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Pagos">
+    <Key>
+      <PropertyRef Name="idPago" />
+    </Key>
+    <Property Name="idPago" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="monto" Type="money" Nullable="false" />
+    <Property Name="fechaPago" Type="date" Nullable="false" />
+    <Property Name="impuesto" Type="money" />
+    <Property Name="idEstado_FK" Type="int" />
+    <Property Name="idConsumidor_FK" Type="int" />
+  </EntityType>
+  <EntityType Name="Sucesos">
+    <Key>
+      <PropertyRef Name="idSuceso" />
+    </Key>
+    <Property Name="idSuceso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tipoSuceso" Type="int" />
+    <Property Name="descripcion" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="idComunidad" />
+    </Key>
+    <Property Name="idComunidad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="clave" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="rol" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <Association Name="FK__Consumido__idCom__398D8EEE">
+    <End Role="Comunidades" Type="Self.Comunidades" Multiplicity="0..1" />
+    <End Role="Consumidores" Type="Self.Consumidores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comunidades">
+        <PropertyRef Name="idComunidad" />
+      </Principal>
+      <Dependent Role="Consumidores">
+        <PropertyRef Name="idComunidad_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Pagos__idConsumi__3F466844">
+    <End Role="Consumidores" Type="Self.Consumidores" Multiplicity="0..1" />
+    <End Role="Pagos" Type="Self.Pagos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Consumidores">
+        <PropertyRef Name="idConsumidor" />
+      </Principal>
+      <Dependent Role="Pagos">
+        <PropertyRef Name="idConsumidor_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Pagos__idEstado___3E52440B">
+    <End Role="Estados" Type="Self.Estados" Multiplicity="0..1" />
+    <End Role="Pagos" Type="Self.Pagos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estados">
+        <PropertyRef Name="idEstado" />
+      </Principal>
+      <Dependent Role="Pagos">
+        <PropertyRef Name="idEstado_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="sp_ActualizarConsumidor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="nombres" Type="varchar" Mode="In" />
+    <Parameter Name="apellidos" Type="varchar" Mode="In" />
+    <Parameter Name="dui" Type="varchar" Mode="In" />
+    <Parameter Name="telefono" Type="varchar" Mode="In" />
+    <Parameter Name="idComunidad" Type="int" Mode="In" />
+    <Parameter Name="correo" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_EliminarConsumidor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_InsertarConsumidores" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nombres" Type="varchar" Mode="In" />
+    <Parameter Name="apellidos" Type="varchar" Mode="In" />
+    <Parameter Name="dui" Type="varchar" Mode="In" />
+    <Parameter Name="telefono" Type="varchar" Mode="In" />
+    <Parameter Name="correo" Type="varchar" Mode="In" />
+    <Parameter Name="idComunidad" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_MostrarClientesId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idComunidad" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_MostrarConsumidores" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="ACAPOLAMIModelStoreContainer">
+    <EntitySet Name="Comunidades" EntityType="Self.Comunidades" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Consumidores" EntityType="Self.Consumidores" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Estados" EntityType="Self.Estados" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pagos" EntityType="Self.Pagos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sucesos" EntityType="Self.Sucesos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Consumido__idCom__398D8EEE" Association="Self.FK__Consumido__idCom__398D8EEE">
+      <End Role="Comunidades" EntitySet="Comunidades" />
+      <End Role="Consumidores" EntitySet="Consumidores" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Pagos__idConsumi__3F466844" Association="Self.FK__Pagos__idConsumi__3F466844">
+      <End Role="Consumidores" EntitySet="Consumidores" />
+      <End Role="Pagos" EntitySet="Pagos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Pagos__idEstado___3E52440B" Association="Self.FK__Pagos__idEstado___3E52440B">
+      <End Role="Estados" EntitySet="Estados" />
+      <End Role="Pagos" EntitySet="Pagos" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
