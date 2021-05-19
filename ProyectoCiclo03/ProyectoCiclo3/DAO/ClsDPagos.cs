@@ -10,7 +10,7 @@ namespace ProyectoCiclo3.DAO
 {
     class ClsDPagos
     {
-        private void AgregarPago(Pagos pagos)
+        public void AgregarPago(Pagos pagos)
         {
             try
             {

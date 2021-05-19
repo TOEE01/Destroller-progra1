@@ -166,3 +166,12 @@ C:\Users\recin\Documents\GitHub\Destroller-progra1\ProyectoCiclo03\ProyectoCiclo
 C:\Users\recin\Documents\GitHub\Destroller-progra1\ProyectoCiclo03\ProyectoCiclo3\obj\Debug\ProyectoCiclo3.csproj.CoreCompileInputs.cache
 C:\Users\recin\Documents\GitHub\Destroller-progra1\ProyectoCiclo03\ProyectoCiclo3\obj\Debug\ProyectoCiclo3.exe
 C:\Users\recin\Documents\GitHub\Destroller-progra1\ProyectoCiclo03\ProyectoCiclo3\obj\Debug\ProyectoCiclo3.pdb
+C:\Users\recin\Documents\GitHub\Destroller-progra1\ProyectoCiclo03\ProyectoCiclo3\bin\Debug\ProyectoCiclo3.exe.config
+C:\Users\recin\Documents\GitHub\Destroller-progra1\ProyectoCiclo03\ProyectoCiclo3\bin\Debug\ProyectoCiclo3.exe
+C:\Users\recin\Documents\GitHub\Destroller-progra1\ProyectoCiclo03\ProyectoCiclo3\bin\Debug\ProyectoCiclo3.pdb
+C:\Users\recin\Documents\GitHub\Destroller-progra1\ProyectoCiclo03\ProyectoCiclo3\bin\Debug\EntityFramework.dll
+C:\Users\recin\Documents\GitHub\Destroller-progra1\ProyectoCiclo03\ProyectoCiclo3\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\recin\Documents\GitHub\Destroller-progra1\ProyectoCiclo03\ProyectoCiclo3\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\recin\Documents\GitHub\Destroller-progra1\ProyectoCiclo03\ProyectoCiclo3\bin\Debug\EntityFramework.xml
+C:\Users\recin\Documents\GitHub\Destroller-progra1\ProyectoCiclo03\ProyectoCiclo3\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\recin\Documents\GitHub\Destroller-progra1\ProyectoCiclo03\ProyectoCiclo3\obj\Debug\ProyectoCiclo3.csproj.CopyComplete

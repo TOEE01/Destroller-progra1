@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProyectoCiclo3.DAO;
 using ProyectoCiclo3.DOMINIO;
 using ProyectoCiclo3.MODELO;
 using ProyectoCiclo3.NEGOCIO;
@@ -91,7 +92,24 @@ namespace ProyectoCiclo3.VISTA
                 }
                 else
                 {
+                    ClsDPagos cls = new ClsDPagos();
 
+                    Pagos pg = new Pagos();
+
+                    pg.monto = Convert.ToInt32(txtMonto.Text);
+                    pg.montoCancelado = Convert.ToInt32(txtCancelado.Text);
+                    pg.impuesto = Convert.ToInt32(txtImpuesto.Text);
+
+                    if(cbConsumidor.Text == "")
+                    {
+                        MessageBox.Show("Seleccione un consumidor");
+                    }
+                    else
+                    {
+                        cbConsumidor.Text = pg.idConsumidor_FK.ToString();
+                    }
+
+                    cls.AgregarPago(pg);
                 }
             }
         }
@@ -111,7 +129,7 @@ namespace ProyectoCiclo3.VISTA
             using (ACAPOLAMIEntities db = new ACAPOLAMIEntities())
             {
 
-                var lista = db.Consumidores.ToList();
+                var lista = db.Comunidades.ToList();
 
                 if (lista.Count > 0)
                 {
